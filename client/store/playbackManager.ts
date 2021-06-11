@@ -1,5 +1,4 @@
 import { ActionTree, GetterTree, MutationTree } from 'vuex';
-import clamp from 'lodash/clamp';
 import shuffle from 'lodash/shuffle';
 import {
   BaseItemDto,
@@ -225,7 +224,7 @@ export const mutations: MutationTree<PlaybackManagerState> = {
     state.lastProgressUpdate = progress;
   },
   SET_VOLUME(state: PlaybackManagerState, { volume }: VolumeMutationPayload) {
-    state.currentVolume = clamp(volume, 0, 100);
+    state.currentVolume = volume;
   },
   SET_MINIMIZE(
     state: PlaybackManagerState,
